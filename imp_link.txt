@@ -1,0 +1,26 @@
+google search for : "how to know run cron job in linux on localhost"
+
+
+Link :
+
+https://support.acquia.com/hc/en-us/articles/360005314473-Setting-up-localhost-cron-jobs
+
+
+######
+
+
+Command : 
+whereis curl
+
+Output : 
+curl: /usr/bin/curl /usr/share/man/man1/curl.1.gz
+
+
+
+######
+
+Command : 
+whereis wget
+
+Output : 
+wget: /usr/bin/wget /usr/share/man/man1/wget.1.gz /usr/share/info/wget.info.gz

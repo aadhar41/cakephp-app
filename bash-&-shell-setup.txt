@@ -1,0 +1,42 @@
+Reference :
+	https://book.cakephp.org/2.0/en/console-and-shells.html#adding-cake-to-your-path
+
+1.	First add to -> /home/ubuntu
+
+Adding cake to your system path
+If you are on a *nix system (linux, MacOSX) the following steps will let you add the cake executable to your system path.
+
+1. Locate where your CakePHP install, and cake executable are. For example /Users/mark/cakephp/lib/Cake/Console/cake
+
+2. Edit your .bashrc or .bash_profile file in your home directory, and add the following: 
+
+export PATH="$PATH:/Users/mark/cakephp/lib/Cake/Console"
+
+Note (Aadhar) : I edited the .bashrc and .bash_profile at the location - (/home/ubuntu) and added the above export PATH to it
+
+3. Reload the bash configuration or open a new terminal, and cake should work anywhere.
+
+
+############
+
+I also have this problem on some servers and never figured out why this happened. I suspect the so called "shebang" might not be set correctly for every Linux distribution (e.g. if the cake script stars with #!/usr/bin/env bash, but you don't use bash on your server or your distribution doesn't have the env binary in that path, it might fail on that. This is just a theory though, as I said I never really figured it out, nor did I invest much time in investigating.
+
+Although, what I always use as a fallback is simply calling the cake.php script (from the app folder) instead, like:
+
+php Console/cake.php -app `pwd` bake
+
+That never lets me down. The -app pwd bit is to tell the shell that your current directory is your app directory, so the shell can find all your files.
+
+############
+
+
+Setup a cron in cakePHP 2 
+
+Reference Link : 
+http://miftyisbored.com/a-tutorial-on-how-to-setup-a-cron-job-for-cakephp-2-x-on-shared-hosting/
+
+
+cron that run every minute:
+
+*	*	*	*	*  cd /var/www/html/cakephp/app/ && Console/cake hello
+
